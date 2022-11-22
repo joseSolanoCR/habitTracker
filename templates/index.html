@@ -16,7 +16,7 @@
         </div>
         {% else %}
             <div class="habit">
-                <form method="post" class="habit__form" action="{{ url_for('complete')}}">
+                <form method="post" class="habit__form" action="{{ url_for('habits.complete')}}">
                     <input type="hidden" name="habitName" value="{{ habit }}"/>
                     <input type="hidden" id="date" name="date" value="{{ selected_date }}"/>
                     <button type="submit" class="habit__button">
