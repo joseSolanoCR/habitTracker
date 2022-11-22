@@ -37,6 +37,7 @@ def add_habit():
         habits.append(habit)
     return render_template("add_habit.html", title="Habit Tracker - Add Habit", selected_date=datetime.date.today())
 
+
 @app.route("/complete", methods=["POST"])
 def complete():
     date_string=request.form.get("date")
