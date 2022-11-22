@@ -32,20 +32,22 @@ def index():
 
 @app.route("/add", methods=["GET", "POST"])
 def add_habit():
-    if request.method == "POST":
-        habit = request.form.get("habit")
-        habits.append(habit)
-    return render_template("add_habit.html", title="Habit Tracker - Add Habit", selected_date=datetime.date.today())
+    if request.form:
+        habits.append(request.form.get("habit"))
 
-
+    return render_template(
+        "add_habit.html",
+        title="Habit Tracker - Add Habit",
+        selected_date=datetime.date.today(),
+    )
 @app.route("/complete", methods=["POST"])
 def complete():
     date_string=request.form.get("date")
-    habit = request.form.get("habit_name")
+    habit = request.form.get("habitName")
     date=datetime.date.fromisoformat(date_string)
     completions[date].append(habit)
 
-    return redirect(url_for("index",date = date_string))
+    return redirect(url_for("index", date=date_string))
 
 
 if __name__ == "__main__":

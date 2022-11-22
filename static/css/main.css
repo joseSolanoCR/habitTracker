@@ -117,3 +117,49 @@ padding: 1rem;
     flex-direction: column;
     align-items:center;
 }
+
+.habit {
+    display: flex;
+    display-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    font-size: 24px;
+    padding: 20px;
+    margin-bottom: 20px;
+    background-color: #fff2d8;
+    border: 3px solid black;
+    border-radius: 6px;
+}
+
+.habit:not(.completed) {
+    paffing: 0px;
+}
+
+.habit:not(.completed):hover {
+    background-color: #e9cd87;
+}
+
+.habit__icon {
+    width: 1em;
+    height: 1em;
+}
+
+.habit__name {
+    margin: 0;
+}
+
+.habit__form {
+    width: 100%;
+}
+
+.habit__button {
+    display: block;
+    width: 100%;
+    padding: 20px;
+    font-size: inherit;
+    font-family: inherit;
+    text-alignment: left;
+    border: none;
+    background-color: unset;
+    cursor: pointer;
+}
